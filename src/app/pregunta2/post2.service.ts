@@ -4,12 +4,6 @@ import { pregunta2 } from './post2';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-export interface Character {
-  id: number;
-  name: string;
-  status: string;
-  species: string;
-}
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +17,7 @@ export class Pregunta2Service {
 
   getHumanCharacters(): Observable<pregunta2[]> {
     return this.http.get<{ results: pregunta2[] }>(this.apiUrl).pipe(
-      map(response => response.results.filter(character => character.species === 'Human'))
+      map(response => response.results.filter(pregunta2 => pregunta2.species === 'Human'))
     );
   }
   }
