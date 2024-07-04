@@ -1,0 +1,15 @@
+export interface pregunta3{
+    /*
+      "postId": 1,
+      "id": 3,
+      "name": "odio adipisci rerum aut animi",
+       "email": "Nikita@garfield.biz",
+       "body": "quia molestiae reprehenderit quasi aspernatur\naut expedita occaecati aliquam eveniet laudantium\nomnis quibusdam delectus saepe quia accusamus maiores nam est\ncum et ducimus et vero voluptates excepturi deleniti ratione"
+    },*/
+
+    postId: number;
+    id: number;
+    name: string;
+    email: string;
+    body: string;
+}
