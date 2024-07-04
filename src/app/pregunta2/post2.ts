@@ -1,19 +1,16 @@
 export interface pregunta2{
-    /*
-       {
-        "id": 1,
-        "name": "Rick Sanchez",
-        "status": "Alive",
-        "species": "Human",
-        "type": "",
-        "gender": "Male",
-        "origin": {
-          "name": "Earth (C-137)",
-          "url": "https://rickandmortyapi.com/api/location/1"
-        },
-    */
-        id:number,
-        name:string,
-        status:string,
-        species:string
-}
+        id: number;
+        name: string;
+        status: string;
+        species: string;
+        type: string;
+        gender: string;
+        origin: {
+          name: string;
+          url: string;
+        };
+        location: string;
+        episode: string[];
+        url: string;
+        created: string;
+      }

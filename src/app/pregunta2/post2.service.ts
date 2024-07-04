@@ -4,17 +4,26 @@ import { pregunta2 } from './post2';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+export interface Character {
+  id: number;
+  name: string;
+  status: string;
+  species: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
-export class Pregunta3Service {
 
-    constructor(private http: HttpClient) { }
-  
-    listCharactersWithOddId(): Observable<pregunta2[]> {
-      return this.http.get<any>("https://rickandmortyapi.com/api/character")
-        .pipe(
-          map(response => response.results.filter((character: pregunta2) => character.id % 2 !== 0))
-        );
-    }
+export class Pregunta2Service {
+
+  private apiUrl = 'https://rickandmortyapi.com/api/character';
+
+  constructor(private http: HttpClient) {}
+
+  getHumanCharacters(): Observable<pregunta2[]> {
+    return this.http.get<{ results: pregunta2[] }>(this.apiUrl).pipe(
+      map(response => response.results.filter(character => character.species === 'Human'))
+    );
+  }
   }
